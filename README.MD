@@ -37,7 +37,7 @@ gemini-flash-chatbot/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/gemini-flash-chatbot.git
+git clone https://github.com/AwinashGoswami/express-gemini-chatbot.git
 cd gemini-flash-chatbot
 ```
 
@@ -50,8 +50,10 @@ npm install
 ### 3. Create `.env` File
 
 ```env
-API_KEY=your-google-api-key-here
-MODEL=generation-models/gemini-1.5-flash
+PORT=3000
+MONGO_URI=mongodb://127.0.0.1:27017/express-gemini-chatbot
+GEMINI_URL=https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent
+GEMINI_API_KEY=your-google-api-key-here
 ```
 
 > Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
@@ -92,6 +94,9 @@ Send a `POST` request to `/api/chat` with a JSON body:
 | axios      | For making HTTP API calls      |
 | dotenv     | Secure environment variables   |
 | cors       | Enable cross-origin requests   |
+| mongoose   | To maintain conversation in DB |
+| uuid       | Generate random sessionID      |
+
 
 ## 🧠 How It Works (DevRel Insight)
 
@@ -137,9 +142,9 @@ This is a solo DevRel demo, but feel free to fork and experiment. PRs are welcom
 
 ## 🧑‍💻 Author
 
-**Awinash Goswami**  
+**Awinash**  
 DevRel | Backend Educator | Tech Writer  
-[LinkedIn](https://www.linkedin.com/in/your-profile) • [Twitter](https://twitter.com/your-handle)
+[LinkedIn](https://www.linkedin.com/in/awinashgoswami/) • [Twitter](https://x.com/awinash_goswami)
 
 ## 📝 License
 
