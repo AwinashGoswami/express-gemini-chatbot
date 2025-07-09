@@ -19,7 +19,8 @@ curl -X POST http://localhost:3000/api/chat \
 - Connects to **Gemini Flash** via Google AI Studio or Vertex AI
 - Simple Express.js backend for chatbot interaction
 - `.env` support for secure API key handling
-- Prepares for future frontend integration (HTML/React)
+- Stores conversation history using MongoDB
+- Basic Bootstrap-based frontend
 - Great DevRel demo: shows API use, error handling, and developer feedback loop
 
 ## 📁 Project Structure
@@ -29,6 +30,8 @@ gemini-flash-chatbot/
 ├── .env
 ├── package.json
 ├── index.js
+├── public/
+│   └── index.html
 ├── README.md
 ```
 
@@ -97,18 +100,19 @@ Send a `POST` request to `/api/chat` with a JSON body:
 | mongoose   | To maintain conversation in DB |
 | uuid       | Generate random sessionID      |
 
-
 ## 🧠 How It Works (DevRel Insight)
 
 This app acts as a bridge between a user interface and the Gemini Flash model. It:
 - Receives user input (`POST /api/chat`)
 - Sends it to the Gemini Flash model
 - Handles errors and malformed input gracefully
-- Returns a clean, usable response
+- Stores session-based history (MongoDB)
+- Returns a clean, usable response for frontend display
 
 As a DevRel project, this showcases:
 - SDK-less direct API usage
 - Testing model prompt responses
+- Writing documentation, creating sample projects
 - A base for blog/tutorial/video content
 
 ## 🧪 Example cURL Command
@@ -119,19 +123,14 @@ curl -X POST http://localhost:3000/api/chat \
   -d '{"message": "Explain recursion like I am five"}'
 ```
 
-## 🛠️ Future Improvements
-
-- Add frontend (HTML/Bootstrap or React)
-- Add streaming support (Gemini API supports streaming responses)
-- Improve error logging and analytics
-- Add retry + fallback logic
-
 ## 📚 Blog / Tutorial
 
-> A full walkthrough blog is in progress. Will include:
+> Read the full DevRel blog on Medium:  
+**[Build Your Own Google Gemini Flash Chatbot in Minutes with Express.js](https://medium.com/@awinashgoswami/build-your-own-google-gemini-flash-chatbot-in-minutes-with-express-js-be06112f7b6c)**  
+Includes:
 - DevRel-style explanations
-- Pain points I solved
-- Use cases for Gemini Flash in real apps
+- Technical architecture
+- Pain points and how I solved them
 
 ## 🤝 Contributing
 
