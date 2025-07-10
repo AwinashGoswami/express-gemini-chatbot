@@ -9,7 +9,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const axios = require('axios');
 
 // POST /chat
-const chat = app.post('/chat', async (req, res) => {
+const chat = async (req, res) => {
     const { message, sessionId } = req.body;
     if (!message) return res.status(400).json({ error: 'Message is required' });
 
@@ -48,6 +48,6 @@ const chat = app.post('/chat', async (req, res) => {
         console.error("Gemini error:", error.response?.data || error.message);
         res.status(500).json({ error: 'Error from Gemini API' });
     }
-});
+}
 
 module.exports = { chat }
